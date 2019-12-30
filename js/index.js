@@ -24,7 +24,7 @@ $(document).ready(function() {
     var that = this;
     ripple($(that), e);
     $(that).addClass("processing");
-    if($(".login__input").val() == "asdf"){
+    if($(".login__input").val() == "20000222"){
       $(".login__tip").html("");
       setTimeout(function() {
         $(that).addClass("success");
