@@ -1,18 +1,160 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>​</title>
-<meta name="viewport" content="width=device-width"/>
-<meta name="viewport" content="initial-scale=1.0,user-scalable=no"/>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--禁止缩放-->
+    <meta name="format-detection" content="telephone=no">
+    <title>​</title>
+    <style type="text/css">
+        body {
+            text-align: center;
+            margin: 0px;
+            padding: 0px;
+            font-size: 25px;
+            color: #FFF;
+            font-family: "微软雅黑";
+            background: #f3961c;
+        }
+        div {
+            text-align: left;
+        }
+        .tittle {
+            width: 100%;
+            background: #f3961c;
+            top: 0px;
+            height: 100%;
+            z-index: 0;
+            position: absolute;
+            position: fixed !important;
+            display: none;
+            cursor: default;
+        }
+
+        .big {
+            font-family: "微软雅黑";
+            color: #FFF;
+            font-size: 35px;
+        }
+        .tishi {
+            position: absolute;
+            position: fixed !important;
+            z-index: 99;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
+        .tishiContent {
+            border: 1px solid #FFF;
+            font-size: 18px;
+            padding: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jQuery.typewriter.js"></script>
+    <script>
+        $(document).ready(function (e) {
+            $(document).scrollTop(300);
+            /*移动滚动条到最下方*/
+            //timer = setInterval("$.change()", 3000);
+            t = 1;
+            $("#t-" + t).fadeIn();
+            $(document).click(
+                    function () {
+                        /*如果点击了，就取消自动播放*/
+                        //clearInterval(timer);
+                        $.change();
+                    }
+            );
+
+            /*切换*/
+            $.change = function () {
+                t++;
+                if (t <= $(".tittle").length) {
+                    $(".tittle").slideUp(1500).fadeOut();
+                    setTimeout(function(){$("#t-" + t + " td").typewriter();$("#t-" + t).show();}, 2500);
+                    //$("#t-" + t).slideDown(1500).fadeIn();
+                } else {
+                    var st = new Date('2016-12-31');
+                    var et = new Date();
+                    var days = Math.floor((et-st)/1000/60/60/24);
+                    alert("想你的第 "+days+" 天\n♥爱你♥");
+                }
+            }
+        });
+    </script>
+
 </head>
 
 <body>
+<section style="text-align: center">
+    <div class="tittle" id="t-1" style="display: block;">
+        <table width="100%" border="0" height="100%">
+            <tbody>
+            <tr>
+                <td align="center">♥</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 
-<h1>hello</h1>
+    <div class="tittle" id="t-2" style="">
+        <table width="100%" border="0" height="100%">
+            <tbody>
+            <tr>
+                <td align="center">我滴<span class="big">小宝贝</span>&nbsp;<span class="big">小可爱</span>&nbsp;<span class="big">小乖乖</span></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 
+    <div class="tittle" id="t-3" style="">
+        <table width="100%" border="0" height="100%">
+            <tbody>
+            <tr>
+                <td align="center"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+   <div class="tittle" id="t-4" style="">
+        <table width="100%" border="0" height="100%">
+            <tbody>
+            <tr>
+                <td align="center"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="tittle" id="t-5" style="">
+        <table width="100%" border="0" height="100%">
+            <tbody>
+            <tr>
+                <td align="center"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="tittle" id="t-6" style="">
+        <table width="100%" border="0" height="100%">
+            <tbody>
+            <tr>
+                <td align="center"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</section>
+<div align="center" class="tishi" style="opacity:0.5;">
+    <span class="tishiContent">点击屏幕继续</span>
+</div>
 </body>
 </html>
