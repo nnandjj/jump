@@ -57,11 +57,30 @@
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/jQuery.typewriter.js"></script>
     <script>
+        function fnDate(){
+        var oDiv=document.getElementById("time");
+        var date=new Date();
+        var year=date.getFullYear();//当前年份
+        var month=date.getMonth();//当前月份
+        var data=date.getDate();//天
+        var hours=date.getHours();//小时
+        var minute=date.getMinutes();//分
+        var second=date.getSeconds();//秒
+        var time=year+"-"+fnW((month+1))+"-"+fnW(data)+" "+fnW(hours)+":"+fnW(minute)+":"+fnW(second);
+        oDiv.innerHTML=time;
+        }
+        //补位 当某个字段不是两位数时补0
+        function fnW(str){
+        var num;
+        str>=10?num=str:num="0"+str;
+        return num;
+        };
         $(document).ready(function (e) {
             $(document).scrollTop(300);
             /*移动滚动条到最下方*/
             //timer = setInterval("$.change()", 3000);
             t = 1;
+            //setInterval(function(){fnDate();},1000);
             $("#t-" + t).fadeIn();
             $(document).click(
                     function () {
@@ -78,6 +97,8 @@
                     $(".tittle").slideUp(1500).fadeOut();
                     setTimeout(function(){$("#t-" + t + " td").typewriter();$("#t-" + t).show();}, 2500);
                     //$("#t-" + t).slideDown(1500).fadeIn();
+                    fnDate();
+                    if(t == $(".tittle").length) setInterval(function(){fnDate();},1000);
                 } else {
                     var st = new Date('2016-12-31');
                     var et = new Date();
@@ -106,7 +127,7 @@
         <table width="100%" border="0" height="100%">
             <tbody>
             <tr>
-                <td align="center">我滴<span class="big">小宝贝</span>&nbsp;<span class="big">小可爱</span>&nbsp;<span class="big">小乖乖</span></td>
+                <td align="center">这里有一份<span class="big">热烈</span>的<span class="big">欢喜</span><br>请注意查收<br>↓↓↓↓↓</td>
             </tr>
             </tbody>
         </table>
@@ -116,7 +137,7 @@
         <table width="100%" border="0" height="100%">
             <tbody>
             <tr>
-                <td align="center"></td>
+                <td align="center">我滴<br><span class="big">小宝贝</span>&nbsp;<span class="big">小可爱</span>&nbsp;<span class="big">小乖乖</span></td>
             </tr>
             </tbody>
         </table>
@@ -125,7 +146,7 @@
         <table width="100%" border="0" height="100%">
             <tbody>
             <tr>
-                <td align="center"></td>
+                <td align="center">没想到<br>转眼间<br>三年就过去了    <br>三年过得这么快    <br>那我们就    <br><span class="big">三十年？</span> <span class="big">六十年？</span> <span class="big">九十年？</span></td>
             </tr>
             </tbody>
         </table>
@@ -136,7 +157,7 @@
         <table width="100%" border="0" height="100%">
             <tbody>
             <tr>
-                <td align="center"></td>
+                <td align="center">每天都还是止不住的想你<br>想要和幺幺一起<br>想牵着幺幺的小手手<img src="hand.gif" alt=""><br>想一直抱着幺幺<img src="bao.jpg" alt=""><br>跟幺幺一起<br>柴米油盐酱醋茶</td>
             </tr>
             </tbody>
         </table>
@@ -146,7 +167,17 @@
         <table width="100%" border="0" height="100%">
             <tbody>
             <tr>
-                <td align="center"></td>
+                <td align="center">想起以前下的那个视频<br>老年人娱乐生活<br>我们以后也会是那样吗<br>散散步👫 钓钓鱼🎣<br>我们还有好多好多地方还没有去过<br>我们还会到处跑去玩吧</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="tittle" id="t-7" style="">
+        <table width="100%" border="0" height="100%">
+            <tbody>
+            <tr>
+                <td align="center">2017-01-01 ---&gt; <span id="time"></span><br>每一天<br> 每一分<br>  每一秒<br>  都想和你一起<br><br><br>你的🐷🐷</td>
             </tr>
             </tbody>
         </table>
